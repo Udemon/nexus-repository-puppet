@@ -1,6 +1,7 @@
 package org.sonatype.nexus.repository.puppet.internal.stub;
 
 import org.sonatype.nexus.common.entity.EntityId;
+import org.sonatype.nexus.selector.CselToSql;
 import org.sonatype.nexus.selector.SelectorConfiguration;
 import org.sonatype.nexus.selector.SelectorEvaluationException;
 import org.sonatype.nexus.selector.SelectorManager;
@@ -77,6 +78,11 @@ final class SelectorManagerStub implements SelectorManager {
 
   @Override
   public void toSql(SelectorConfiguration selectorConfiguration, SelectorSqlBuilder sqlBuilder) throws SelectorEvaluationException {
+    throw new UnsupportedOperationException("Not yet implemented");
+  }
+
+  @Override
+  public void toSql(SelectorConfiguration selectorConfiguration, SelectorSqlBuilder sqlBuilder,  CselToSql cselToSql) throws SelectorEvaluationException {
     throw new UnsupportedOperationException("Not yet implemented");
   }
 

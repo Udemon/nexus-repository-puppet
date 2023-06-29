@@ -5,12 +5,17 @@ import org.sonatype.nexus.common.node.NodeAccess;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
 
 /**
  * @author <a href="mailto:krzysztof.suszynski@wavesoftware.pl">Krzysztof Suszynski</a>
  * @since 0.1.0
  */
 final class NodeAccessStub implements NodeAccess {
+
+  private final CompletableFuture<String> future = CompletableFuture.supplyAsync(this::compute);
+
   @Override
   public String getId() {
     return "D3817";
@@ -39,6 +44,11 @@ final class NodeAccessStub implements NodeAccess {
   @Override
   public Map<String, String> getMemberAliases() {
     throw new UnsupportedOperationException("Not yet implemented");
+  }
+
+  @Override
+  public CompletionStage<String> getHostName() {
+    return future;
   }
 
   @Override
