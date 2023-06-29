@@ -81,6 +81,11 @@ final class SelectorManagerStub implements SelectorManager {
   }
 
   @Override
+  public void toSql(SelectorConfiguration selectorConfiguration, SelectorSqlBuilder sqlBuilder, CselToSql cselToSql) throws SelectorEvaluationException {
+    throw new UnsupportedOperationException("Not yet implemented");
+  }
+
+  @Override
   public SelectorConfiguration newSelectorConfiguration() {
     throw new UnsupportedOperationException("Not yet implemented");
   }
