@@ -3,6 +3,8 @@ package org.sonatype.nexus.repository.puppet.internal.stub;
 import org.sonatype.nexus.security.ClientInfo;
 import org.sonatype.nexus.security.ClientInfoProvider;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 /**
  * @author <a href="mailto:krzysztof.suszynski@wavesoftware.pl">Krzysztof Suszynski</a>
  * @since 0.1.0
