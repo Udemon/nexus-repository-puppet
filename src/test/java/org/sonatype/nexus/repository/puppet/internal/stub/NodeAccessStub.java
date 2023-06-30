@@ -1,5 +1,8 @@
 package org.sonatype.nexus.repository.puppet.internal.stub;
 
+import org.apache.commons.io.IOUtils;
+
+import org.sonatype.goodies.common.ComponentSupport;
 import org.sonatype.nexus.common.node.NodeAccess;
 
 import java.io.InputStream;
@@ -13,13 +16,13 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
-import org.apache.commons.io.IOUtils;
-
 /**
  * @author <a href="mailto:krzysztof.suszynski@wavesoftware.pl">Krzysztof Suszynski</a>
  * @since 0.1.0
  */
-final class NodeAccessStub implements NodeAccess {
+final class NodeAccessStub
+  extends ComponentSupport
+  implements NodeAccess {
 
   private final CompletableFuture<String> future = CompletableFuture.supplyAsync(this::compute);
 
